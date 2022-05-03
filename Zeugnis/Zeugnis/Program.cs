@@ -55,22 +55,64 @@ namespace Zeugnis
 			
 			String[] faecherNamen = {"Deutsch", "Mathe", "Englisch", "Zweite Fremdsprache", "Politik", "Physik", "Chemie", "Sport"};
 			
-			Console.WriteLine("Deutsch");
+			Console.WriteLine("Chemie:");
 			faecher[0] = Convert.ToDouble(Console.ReadLine());
-			Console.WriteLine("Mathe:");
+			if(Convert.ToInt32(faecher[0])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
+			
+			Console.WriteLine("Deutsch:");
 			faecher[1]= Convert.ToDouble(Console.ReadLine());
+			if(Convert.ToInt32(faecher[1])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
 			Console.WriteLine("Englisch:");
 			faecher[2]= Convert.ToDouble(Console.ReadLine());
-			Console.WriteLine("Zweite Fremdsprache:");
+			if(Convert.ToInt32(faecher[2])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
+			Console.WriteLine("Mathe:");
 			faecher[3]= Convert.ToDouble(Console.ReadLine());
-			Console.WriteLine("Politik:");
-			faecher[4]= Convert.ToDouble(Console.ReadLine());
+			if(Convert.ToInt32(faecher[3])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
 			Console.WriteLine("Physik:");
+			faecher[4]= Convert.ToDouble(Console.ReadLine());
+			if(Convert.ToInt32(faecher[4])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
+			Console.WriteLine("Politik:");
 			faecher[5]= Convert.ToDouble(Console.ReadLine());
-			Console.WriteLine("Chemie:");
-			faecher[6]= Convert.ToDouble(Console.ReadLine());
+			if(Convert.ToInt32(faecher[5])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
 			Console.WriteLine("Sport:");
+			faecher[6]= Convert.ToDouble(Console.ReadLine());
+			if(Convert.ToInt32(faecher[6])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
+			Console.WriteLine("Zweite Fremdsprache:");
 			faecher[7]= Convert.ToDouble(Console.ReadLine());
+			
+			if(Convert.ToInt32(faecher[7])>15)
+			{
+				Console.Write("Noten von 0-15 eintragen");
+				Console.ReadKey();
+			}
 			
 			
 				Console.WriteLine("Leistungskurs 1:");
@@ -103,6 +145,8 @@ namespace Zeugnis
 				
 				Ergebnis=Ergebnis/10;
 				Ergebnis=(17-Ergebnis)/3;
+				Console.WriteLine("Durchschnittliche Note;");
+				Console.ReadKey();
 				Console.WriteLine("{0:F1}", Ergebnis);
 				Console.ReadLine();
 			
