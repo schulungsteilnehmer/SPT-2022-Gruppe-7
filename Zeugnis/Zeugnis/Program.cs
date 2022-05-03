@@ -31,7 +31,26 @@ namespace Zeugnis
 			Console.ReadLine();
 			Console.WriteLine("Datum:");
 			Console.ReadLine();
+			Console.WriteLine("Fehltage:");
+				Console.ReadLine();
+				Console.WriteLine("Unentschuldigte Fehltage:");
+			int	Unentschuldigte_Fehltage=Convert.ToInt32(Console.ReadLine());
+				
+					if (Unentschuldigte_Fehltage>=31)
+					{
+						Console.WriteLine("Der Schüler wird nicht versetzt");
+							Console.ReadLine();
+					}
+					
+					if(Unentschuldigte_Fehltage<31)
+					{
+						Console.WriteLine("Der Schüler wird versetzt");
+						Console.ReadLine();
+					}
+					
+				
 			
+					
 			double[] faecher = new double[8];
 			
 			String[] faecherNamen = {"Deutsch", "Mathe", "Englisch", "Zweite Fremdsprache", "Politik", "Physik", "Chemie", "Sport"};
@@ -69,30 +88,28 @@ namespace Zeugnis
 				Console.ReadLine();
 				
 				i= 0;
-				while (faecherNamen[i].Equals(lk2)==false) {
+				while (faecherNamen[i].Equals(lk2)==false && i < 7) {
 					i++;
 				}
 				Ergebnis += faecher[i];
 			
 				
 				i=0;
-				while(i <= 7) {
+				while(i < 7) {
 					Ergebnis += faecher[i];
 					i++;
 				}
 				
 				
-				
+				Ergebnis=Ergebnis/10;
+				Ergebnis=(17-Ergebnis)/3;
+				Console.WriteLine("{0:F1}", Ergebnis);
+				Console.ReadLine();
 			
 		
 		
 			
-		
-			if(Ergebnis<5)
-			{
-				Console.WriteLine("Schüler wird nicht versetzt");
-			}
-			
+
 			
 			
 			
