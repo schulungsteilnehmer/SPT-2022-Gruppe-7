@@ -21,19 +21,22 @@ namespace Zeugnis
 			// TODO: Implement Functionality Here
 			
 			double Ergebnis=0;
-			
+			string Name;
+			int Datum;
+			string Klasse;
 			
 		
 			
-			Console.WriteLine("Name:");
+			Console.Write("Name eingeben:");
+			Name=Console.ReadLine();
+			Console.Write("Klasse eingeben:");
 			Console.ReadLine();
-			Console.WriteLine("Klasse:");
 			Console.ReadLine();
-			Console.WriteLine("Datum:");
+			Console.Write("Datum eingeben:");
 			Console.ReadLine();
-			Console.WriteLine("Fehltage:");
+			Console.Write("Fehltage:");
 				Console.ReadLine();
-				Console.WriteLine("Unentschuldigte Fehltage:");
+				Console.Write("Unentschuldigte Fehltage:");
 			int	Unentschuldigte_Fehltage=Convert.ToInt32(Console.ReadLine());
 				
 					if (Unentschuldigte_Fehltage>=31)
@@ -44,7 +47,7 @@ namespace Zeugnis
 					
 					if(Unentschuldigte_Fehltage<31)
 					{
-						Console.WriteLine("Der Schüler wird versetzt");
+						Console.WriteLine("Der Schüler war oft genug anwesend");
 						Console.ReadLine();
 					}
 					
@@ -55,7 +58,7 @@ namespace Zeugnis
 			
 			String[] faecherNamen = {"Deutsch", "Mathe", "Englisch", "Zweite Fremdsprache", "Politik", "Physik", "Chemie", "Sport"};
 			
-			Console.WriteLine("Chemie:");
+			Console.Write("Chemie:");
 			faecher[0] = Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[0])>15)
 			{
@@ -63,49 +66,49 @@ namespace Zeugnis
 				Console.ReadKey();
 			}
 			
-			Console.WriteLine("Deutsch:");
+			Console.Write("Deutsch:");
 			faecher[1]= Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[1])>15)
 			{
 				Console.Write("Noten von 0-15 eintragen");
 				Console.ReadKey();
 			}
-			Console.WriteLine("Englisch:");
+			Console.Write("Englisch:");
 			faecher[2]= Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[2])>15)
 			{
 				Console.Write("Noten von 0-15 eintragen");
 				Console.ReadKey();
 			}
-			Console.WriteLine("Mathe:");
+			Console.Write("Mathe:");
 			faecher[3]= Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[3])>15)
 			{
 				Console.Write("Noten von 0-15 eintragen");
 				Console.ReadKey();
 			}
-			Console.WriteLine("Physik:");
+			Console.Write("Physik:");
 			faecher[4]= Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[4])>15)
 			{
 				Console.Write("Noten von 0-15 eintragen");
 				Console.ReadKey();
 			}
-			Console.WriteLine("Politik:");
+			Console.Write("Politik:");
 			faecher[5]= Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[5])>15)
 			{
 				Console.Write("Noten von 0-15 eintragen");
 				Console.ReadKey();
 			}
-			Console.WriteLine("Sport:");
+			Console.Write("Sport:");
 			faecher[6]= Convert.ToDouble(Console.ReadLine());
 			if(Convert.ToInt32(faecher[6])>15)
 			{
 				Console.Write("Noten von 0-15 eintragen");
 				Console.ReadKey();
 			}
-			Console.WriteLine("Zweite Fremdsprache:");
+			Console.Write("Zweite Fremdsprache:");
 			faecher[7]= Convert.ToDouble(Console.ReadLine());
 			
 			if(Convert.ToInt32(faecher[7])>15)
@@ -114,7 +117,8 @@ namespace Zeugnis
 				Console.ReadKey();
 			}
 			
-			
+		
+			   
 				Console.WriteLine("Leistungskurs 1:");
 				String lk1 = Console.ReadLine();
 				
@@ -147,17 +151,38 @@ namespace Zeugnis
 				Ergebnis=(17-Ergebnis)/3;
 				Console.WriteLine("Durchschnittliche Note;");
 				Console.ReadKey();
-				Console.WriteLine("{0:F1}", Ergebnis);
+				Console.Write("{0:F1}", Ergebnis);
 				Console.ReadLine();
 			
+			
+				int Unterkurs=0;
+				for(int index=0;index<faecher.Length;index++)
+				{
+					if(faecher[index]<5)
+					{
+						Unterkurs++;
+					}
+				}
+				if(Unterkurs>=2)
+				{
+					Console.WriteLine("Der Schüler wird aufgrund seiner hohen Anzahl an Unterkursen nicht versetzt");
+					Console.Read();
+				}
 		
+		      Console.WriteLine("=========Zeugnis========");
+		      Console.WriteLine("Name: " +Name);
 		
+		      
+		      for(int e=0;e<faecherNamen.Length;e++)
+		      {
+		      	Console.WriteLine(faecherNamen[e]+ ": "+ faecher[e]);
+		      }
+		      
+				                  
 			
-
 			
 			
-			
-			Console.Read();
+			Console.ReadKey();
 		}
 	}
 }
