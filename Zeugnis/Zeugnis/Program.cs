@@ -22,7 +22,7 @@ namespace Zeugnis
 			
 			double Ergebnis=0;
 			string Name;
-			int Datum;
+			string Datum;
 			string Klasse;
 			
 		
@@ -30,10 +30,9 @@ namespace Zeugnis
 			Console.Write("Name eingeben:");
 			Name=Console.ReadLine();
 			Console.Write("Klasse eingeben:");
-			Console.ReadLine();
-			Console.ReadLine();
+			Klasse=Console.ReadLine();
 			Console.Write("Datum eingeben:");
-			Console.ReadLine();
+			Datum=Console.ReadLine();
 			Console.Write("Fehltage:");
 				Console.ReadLine();
 				Console.Write("Unentschuldigte Fehltage:");
@@ -119,7 +118,7 @@ namespace Zeugnis
 			
 		
 			   
-				Console.WriteLine("Leistungskurs 1:");
+				Console.Write("Leistungskurs 1:");
 				String lk1 = Console.ReadLine();
 				
 				int i = 0;
@@ -130,7 +129,7 @@ namespace Zeugnis
 				
 				
 				String lk2=Console.ReadLine();
-				Console.WriteLine("Leistungskurs 2:");
+				Console.Write("Leistungskurs 2:");
 				Console.ReadLine();
 				
 				i= 0;
@@ -171,14 +170,31 @@ namespace Zeugnis
 		
 		      Console.WriteLine("=========Zeugnis========");
 		      Console.WriteLine("Name: " +Name);
+		      Console.WriteLine("Datum: "+Datum);
+		      Console.WriteLine("Klasse: "+Klasse);
+		      Console.WriteLine("========================");
 		
 		      
 		      for(int e=0;e<faecherNamen.Length;e++)
 		      {
 		      	Console.WriteLine(faecherNamen[e]+ ": "+ faecher[e]);
 		      }
+		     
 		      
-				                  
+		      Console.WriteLine("Durchschnittsnote "+"{0:F1}",Ergebnis);
+		      
+		      
+		      Console.WriteLine("====================");
+		      
+		      if(Ergebnis>4)
+		      {
+		      	Console.WriteLine("Der Schüler wird nicht versetzt");
+		      }
+		      
+		      if(Ergebnis<4)
+		      {
+		      	Console.WriteLine("Der Schüler wird versetzt");
+		      }
 			
 			
 			
